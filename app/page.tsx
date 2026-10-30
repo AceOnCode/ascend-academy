@@ -20,18 +20,19 @@ export default function Home() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const whatsappNumber = "919999999999";
+    const whatsappNumber = "919265788554";
 
     const message = `New Student Enquiry
 
 Name: ${form.name}
 Phone: ${form.phone}
 Course: ${form.course}
-Message: ${form.message}`;
+Message: ${form.message || "No additional message"}`;
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
+      "noopener,noreferrer"
     );
   }
 
@@ -170,14 +171,14 @@ Message: ${form.message}`;
               <button type="submit" className="w-full rounded-full bg-emerald-400 px-8 py-4 font-bold text-[#18251f] transition hover:bg-emerald-300">
                 Submit enquiry via WhatsApp ↗
               </button>
-              <p className="text-center text-xs text-gray-400">Demo contact number must be replaced before delivery.</p>
+              <p className="text-center text-xs text-gray-400">Enquiries open directly in WhatsApp.</p>
             </form>
           </div>
         </div>
       </section>
 
       <footer className="border-t border-gray-200 px-6 py-8 text-center text-sm text-gray-500">
-        © 2026 Ascend Academy · Demo website concept
+        © 2026 Ascend Academy · Website by AceOnCode Studios
       </footer>
     </main>
   );
